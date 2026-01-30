@@ -1,0 +1,12 @@
+# 3D Platformer Game Dependencies
+# For Linux systems
+
+# Core game library with OpenGL support
+pyglet>=2.0.0
+
+# OpenGL bindings for 3D rendering
+PyOpenGL>=3.1.0
+PyOpenGL-accelerate>=3.1.0
+
+# Math library for vector and matrix operations
+numpy>=1.21.0
