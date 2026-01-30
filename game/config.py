@@ -17,7 +17,8 @@ PLAYER_START_POS = [0.0, 2.0, 0.0]  # Starting position [x, y, z]
 
 # Physics settings
 GRAVITY = -20.0  # Gravity acceleration (negative pulls down)
-GROUND_LEVEL = 0.0  # Y-coordinate of the ground
+COLLISION_Y_TOLERANCE_ABOVE = 0.1  # Tolerance for landing on platform (above)
+COLLISION_Y_TOLERANCE_BELOW = 0.5  # Tolerance for landing on platform (below)
 
 # Camera settings
 CAMERA_DISTANCE = 10.0  # Distance from player

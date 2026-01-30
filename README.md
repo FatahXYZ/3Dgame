@@ -4,7 +4,7 @@ A simple yet engaging 3D platformer game built with Python, Pyglet, and OpenGL, 
 
 ## Features
 
-- **3D Game World**: Fully realized 3D environment with textured platforms
+- **3D Game World**: Fully realized 3D environment with colored platforms
 - **Player Character**: Blue cube character with smooth movement controls
 - **Physics System**: Realistic gravity and collision detection
 - **Third-Person Camera**: Smooth chase camera that follows the player
@@ -18,7 +18,7 @@ The game features:
 - A blue player cube that you control
 - A golden goal marker to reach
 - Smooth camera following system
-- Grid-based ground for spatial reference
+- Grid-based ground for spatial reference.
 
 ## Prerequisites
 
@@ -187,14 +187,15 @@ pip3 install --upgrade PyOpenGL PyOpenGL-accelerate
 
 ## Known Limitations
 
-1. **No Texture Loading**: Currently uses solid colors instead of texture images for simplicity
+1. **No Texture Loading**: Currently uses solid colors instead of texture images for simplicity and performance
 2. **Simple Graphics**: Uses basic cube/box shapes rather than complex 3D models
 3. **Fixed Level**: Only one predefined level (easily extendable via config)
 4. **No Audio**: No sound effects or music
 5. **Single Player Only**: No multiplayer support
 6. **No Save System**: No progress saving or level checkpoints
 7. **Basic Collision**: Uses simple AABB collision (no complex geometry)
-8. **Linux Only**: Optimized for Linux (should work on Windows/Mac but not tested)
+8. **Linux Focus**: Optimized for Linux (should work on Windows/Mac but not tested)
+9. **Overlapping Platforms**: Collision detection may behave unexpectedly with overlapping platforms
 
 ## Future Enhancements
 

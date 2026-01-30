@@ -3,8 +3,6 @@ Physics Module
 Implements basic physics including gravity, collision detection, and player movement.
 """
 
-import math
-
 
 class PhysicsEngine:
     """
@@ -61,8 +59,9 @@ class PhysicsEngine:
         
         # Check if player is just above the platform surface
         # Allow small tolerance for landing
-        y_on_platform = (py - ps <= plat_y + plat_h/2 + 0.1 and
-                        py - ps >= plat_y + plat_h/2 - 0.5)
+        from game import config
+        y_on_platform = (py - ps <= plat_y + plat_h/2 + config.COLLISION_Y_TOLERANCE_ABOVE and
+                        py - ps >= plat_y + plat_h/2 - config.COLLISION_Y_TOLERANCE_BELOW)
         
         return x_overlap and z_overlap and y_on_platform
     

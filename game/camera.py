@@ -3,8 +3,6 @@ Camera Module
 Implements a third-person chase camera that smoothly follows the player.
 """
 
-import math
-
 
 class Camera:
     """

@@ -147,8 +147,11 @@ class Game(pyglet.window.Window):
         self.player.update(dt)
         
         # Check for collisions with platforms
+        # Find the highest platform the player is colliding with
         player_pos = self.player.get_position()
         self.player.is_grounded = False
+        
+        highest_platform_y = None
         
         for platform in self.platforms:
             if self.physics.check_collision_with_platform(
@@ -157,15 +160,20 @@ class Game(pyglet.window.Window):
                 platform["pos"],
                 platform["size"]
             ):
-                # Resolve collision - place player on platform
+                # Calculate corrected Y position for this platform
                 corrected_y = self.physics.resolve_platform_collision(
                     player_pos,
                     self.player.size,
                     platform["pos"],
                     platform["size"]
                 )
-                self.player.land_on_platform(corrected_y)
-                break
+                # Keep track of highest platform
+                if highest_platform_y is None or corrected_y > highest_platform_y:
+                    highest_platform_y = corrected_y
+        
+        # If player is on a platform, place them on the highest one
+        if highest_platform_y is not None:
+            self.player.land_on_platform(highest_platform_y)
         
         # Check if player reached the goal
         if self.physics.check_point_in_box(

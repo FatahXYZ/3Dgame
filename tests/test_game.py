@@ -61,7 +61,7 @@ def test_player_jump():
     # Test jump
     player.jump()
     assert player.velocity_y == 10.0
-    assert player.is_jumping == True
+    assert player.is_jumping
     
     # Test can't double jump
     player.jump()
@@ -93,14 +93,14 @@ def test_collision_detection():
     collision = physics.check_collision_with_platform(
         player_pos, 1.0, platform_pos, platform_size
     )
-    assert collision == True
+    assert collision
     
     # Player not on platform
     player_pos = [10, 0.75, 0]
     collision = physics.check_collision_with_platform(
         player_pos, 1.0, platform_pos, platform_size
     )
-    assert collision == False
+    assert not collision
     print("✓ Collision detection test passed")
 
 
@@ -129,14 +129,14 @@ def test_goal_detection():
     at_goal = physics.check_point_in_box(
         player_pos, config.GOAL_POSITION, config.GOAL_SIZE
     )
-    assert at_goal == True
+    assert at_goal
     
     # Player not at goal
     player_pos = [0, 0, 0]
     at_goal = physics.check_point_in_box(
         player_pos, config.GOAL_POSITION, config.GOAL_SIZE
     )
-    assert at_goal == False
+    assert not at_goal
     print("✓ Goal detection test passed")
 
 

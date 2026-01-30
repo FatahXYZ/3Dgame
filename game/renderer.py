@@ -1,11 +1,10 @@
 """
 Renderer Module
-Handles all OpenGL rendering including 3D objects, textures, and scene setup.
+Handles all OpenGL rendering including 3D objects and scene setup.
 """
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
-import math
 
 
 class Renderer:
@@ -97,7 +96,7 @@ class Renderer:
     
     def draw_cube(self, x, y, z, size, color):
         """
-        Draw a textured/colored cube at the specified position.
+        Draw a colored cube at the specified position.
         
         Args:
             x (float): X position (center)

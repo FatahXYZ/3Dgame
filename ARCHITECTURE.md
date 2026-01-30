@@ -130,7 +130,7 @@ This creates a smooth, cinematic camera that follows the player without being to
    - Draw scene objects (grid, platforms, goal, player)
    - Draw UI overlay (win text)
 
-**Note**: Currently uses colored geometry. Can be extended to support textures.
+**Note**: Currently uses solid colors for simplicity. Texture support would require additional implementation to load texture images and apply UV coordinates.
 
 ## Data Flow
 
